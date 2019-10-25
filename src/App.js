@@ -17,8 +17,11 @@ const FindChecked = (props) => {
         </div>
     );
 }
+
+let list = localStorage.getItem('todolist')? JSON.parse(localStorage.getItem('todolist')):[];
+
 function App() {
-  const [todolist,setTodolist] = useState([]);
+  const [todolist,setTodolist] = useState(list);
   const [display,setDisplay] = useState(0);
   const [allMarked,setAllMarked]=useState(0);
   const handleEvent = (e) =>{
@@ -26,22 +29,26 @@ function App() {
       {
         if(e.target.value!=='')
         setTodolist([...todolist,{list:e.target.value,completed:false}])
+        localStorage.setItem('todolist',JSON.stringify(todolist));
         e.target.value=''
       }
   }
   const handleClick  = (d) =>{
    todolist.splice(d,1);
    setTodolist([...todolist]);
+   localStorage.setItem('todolist',JSON.stringify(todolist));
   }
   const handleCheckbox = (d) => {
     console.log(d);
       if(todolist[d].completed===true){
         todolist[d].completed=false;
         setTodolist([...todolist]);
+        localStorage.setItem('todolist',JSON.stringify(todolist));
       }
       else{
         todolist[d].completed=true;
         setTodolist([...todolist]);
+        localStorage.setItem('todolist',JSON.stringify(todolist));
       }
   }
   const handleDisplay = (d) => {
@@ -50,11 +57,13 @@ function App() {
   const handleEditData = (d,id) =>{
     todolist[id].list=d;
     setTodolist(todolist);
+    localStorage.setItem('todolist',JSON.stringify(todolist));
   }
   const handleClearCompleted = () =>{
     let data;
     data=todolist.filter( (d,i) => d.completed===false);
     setTodolist(data);
+    localStorage.setItem('todolist',JSON.stringify(todolist));
   }
   const handleAllCompleted = () => {
     let data;
@@ -75,6 +84,7 @@ function App() {
     setAllMarked(0);
   }
     setTodolist(data);
+    localStorage.setItem('todolist',JSON.stringify(todolist));
   }
 
   const findNoofCompletedtodo = () =>{
