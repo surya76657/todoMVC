@@ -25,13 +25,15 @@ function App() {
   const [display,setDisplay] = useState(0);
   const [allMarked,setAllMarked]=useState(0);
   const handleEvent = (e) =>{
+    let d=[];
     if(e.keyCode===ENTER)
       {
         if(e.target.value!=='')
-        setTodolist([...todolist,{list:e.target.value,completed:false}])
-        localStorage.setItem('todolist',JSON.stringify(todolist));
+        d = [...todolist,{list:e.target.value,completed:false}];
+        setTodolist(d);
         e.target.value=''
       }
+      localStorage.setItem('todolist',JSON.stringify(d));
   }
   const handleClick  = (d) =>{
    todolist.splice(d,1);
@@ -63,7 +65,7 @@ function App() {
     let data;
     data=todolist.filter( (d,i) => d.completed===false);
     setTodolist(data);
-    localStorage.setItem('todolist',JSON.stringify(todolist));
+    localStorage.setItem('todolist',JSON.stringify(data));
   }
   const handleAllCompleted = () => {
     let data;
