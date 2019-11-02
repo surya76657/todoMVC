@@ -1,193 +1,194 @@
 .App {
-  display:flex;
+  display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: 	#F5F5F5;
+  background-color: #f5f5f5;
 }
-.top{
+.top {
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-shadow: 3px 0px 15px #888888;
-  width:490px;
+  // max-width: 490px;
   align-self: center;
 }
-.title{
-  color:rgba(175, 47, 47, 0.15);
+.title {
+  color: rgba(175, 47, 47, 0.15);
   font-style: normal;
-    font-variant-ligatures: normal;
-    font-variant-caps: normal;
-    font-variant-numeric: normal;
-    font-variant-east-asian: normal;
-    font-weight: 300;
-    font-stretch: normal;
-    font-size: 120px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-bottom: 0px;
-    margin-top:20px;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  font-size: 120px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
-#todo{
-  width:445px;
+#todo {
+  // width: 445px;
+  flex: 1;
   align-self: center;
   height: 50px;
   outline: none;
-  border:none;
+  border: none;
   background-color: white;
   padding: 10px;
   font-size: 24px;
-  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: inherit;
 }
-.btn{
+.btn {
   display: none;
   background-color: Transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
   font-size: 14px;
 }
-#checkbox{
+#checkbox {
   border-radius: 50%;
-  display:flex;
+  display: flex;
   justify-content: flex-start;
 }
 
-.header{
+.header {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width:490px;
-  align-self: center;
+  // flex-direction: row;
+  // justify-content: center;
+  // // width: 490px;
+  // align-self: center;
 }
-.body{
+.todo-body {
   display: flex;
   justify-content: center;
-  overflow:hidden;
+  overflow: hidden;
 }
 
-.editInput{
+.editInput {
   flex-grow: 1;
-  height:15px;
+  height: 15px;
   padding: 15px 0;
   &:focus + button.btn {
     display: none;
   }
   font-size: 24px;
 }
-.list{
- display: flex;
- flex-direction: row;
- width:460px;
- justify-content: space-between;
- background-color: white;
- border-top: 0.25px solid lightgray;
- border-bottom: 0.25px solid lightgray;
- padding: 0 15px;
- border-block-end: #4d4d4d;
+.list {
+  display: flex;
+  flex-direction: row;
+  // width: 460px;
+  justify-content: space-between;
+  background-color: white;
+  border-top: 0.25px solid lightgray;
+  border-bottom: 0.25px solid lightgray;
+  padding: 0 15px;
+  border-block-end: #4d4d4d;
 }
-.footer{
+.footer {
   display: flex;
   justify-content: center;
 }
 
-.btns{
+.btns {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: white;
-  width:477px;
-  border-top:0.5px solid lightgray;
+  width: 477px;
+  border-top: 0.5px solid lightgray;
   flex-flow: nowrap;
   padding: 7px;
 }
 
-.list:hover .btn{
+.list:hover .btn {
   display: flex;
-  color:#d61919b4;
-  font-size:20px;
+  color: #d61919b4;
+  font-size: 20px;
 }
-.all-btn{
+.all-btn {
   background-color: Transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
   margin-left: 10px;
-  &.active{
-    border:0.5px solid rgba(175, 47, 47, 0.15);
-    border-radius: 10px; 
+  &.active {
+    border: 0.5px solid rgba(175, 47, 47, 0.15);
+    border-radius: 10px;
   }
 }
 
 .all-btn:hover {
-  border:0.5px solid rgba(175, 47, 47, 0.15);
+  border: 0.5px solid rgba(175, 47, 47, 0.15);
   border-radius: 10px;
-  
 }
-.active-btn{
+.active-btn {
   background-color: Transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
   margin-left: 10px;
-  &.active{
-    border:0.5px solid rgba(175, 47, 47, 0.15);
-    border-radius: 10px; 
+  &.active {
+    border: 0.5px solid rgba(175, 47, 47, 0.15);
+    border-radius: 10px;
   }
 }
 .active-btn:hover {
-  border:0.5px solid rgba(175, 47, 47, 0.15);
+  border: 0.5px solid rgba(175, 47, 47, 0.15);
   border-radius: 10px;
 }
-.drop{
+.drop {
   background-color: Transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
+  padding: 1rem;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
   background-color: white;
 }
-.comp-btn{
+.comp-btn {
   background-color: Transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
   margin-left: 10px;
-  &.active{
-    border:0.5px solid rgba(175, 47, 47, 0.15);
-    border-radius: 10px; 
+  &.active {
+    border: 0.5px solid rgba(175, 47, 47, 0.15);
+    border-radius: 10px;
   }
 }
 .comp-btn:hover {
-  border:0.5px solid rgba(175, 47, 47, 0.15);
+  border: 0.5px solid rgba(175, 47, 47, 0.15);
   border-radius: 10px;
 }
 
-.ileft{
+.ileft {
   display: flex;
   flex-direction: row;
 }
-.clr-comp{
+.clr-comp {
   background-color: Transparent;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   border: none;
-  cursor:pointer;
+  cursor: pointer;
   overflow: hidden;
-  outline:none;
+  outline: none;
 }
 
-.clr-comp:hover{
+.clr-comp:hover {
   text-decoration-line: underline;
 }
-.ele{
+.ele {
   display: flex;
   list-style-type: none;
   flex: 1 0 0;
@@ -197,8 +198,6 @@
   text-align: left;
   font-size: 24px;
 }
-
-
 
 .container {
   display: block;
@@ -254,7 +253,7 @@
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }
